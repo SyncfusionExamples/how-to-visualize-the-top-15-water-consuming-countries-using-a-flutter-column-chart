@@ -43,17 +43,17 @@ class WaterConsumptionBubbleChart extends StatelessWidget {
     ];
 
     return Container(
-      decoration: BoxDecoration(
-        image: const DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage('assets/images/backgroundImage.png'),
-        ),
-        gradient: LinearGradient(
-          colors: [Colors.blue.shade100, Colors.white],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-      ),
+decoration: BoxDecoration(
+  image: const DecorationImage(
+    fit: BoxFit.cover,
+    image: AssetImage('assets/images/backgroundImage.png'),
+  ),
+  gradient: LinearGradient(
+    colors: [Colors.blue.shade100, Colors.white],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  ),
+),
       child: SfCartesianChart(
         title: const ChartTitle(
           text: 'Top 15 Water-Consuming Countries by Daily Usage (Liters)',

@@ -53,28 +53,28 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/images/Azerbaijan.png
+    - assets/images/Chile.png
+    - assets/images/Estonia.png
+    - assets/images/Finland.png
+    - assets/images/Guyana.png
+    - assets/images/Iran.png
+    - assets/images/Kazakhstan.png
+    - assets/images/Kyrgyzstan.png
+    - assets/images/New-Zealand.png
+    - assets/images/Suriname.png
+    - assets/images/Tajikistan.png
+    - assets/images/Timor.png
+    - assets/images/Turkmenistan.png
+    - assets/images/United-States.png
+    - assets/images/Uzbekistan.png
+    - assets/images/backgroundImage.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets:
-  - assets/images/Azerbaijan.png
-  - assets/images/Chile.png
-  - assets/images/Estonia.png
-  - assets/images/Finland.png
-  - assets/images/Guyana.png
-  - assets/images/Iran.png
-  - assets/images/Kazakhstan.png
-  - assets/images/Kyrgyzstan.png
-  - assets/images/New-Zealand.png
-  - assets/images/Suriname.png
-  - assets/images/Tajikistan.png
-  - assets/images/Timor.png
-  - assets/images/Turkmenistan.png
-  - assets/images/United-States.png
-  - assets/images/Uzbekistan.png
-  - assets/images/backgroundImage.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
