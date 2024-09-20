@@ -55,6 +55,13 @@ class WaterConsumptionColumnChart extends StatelessWidget {
         ),
       ),
       child: SfCartesianChart(
+        title: const ChartTitle(
+          text: 'Top 15 Water-Consuming Countries by Daily Usage (Liters)',
+          textStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
         primaryXAxis: const CategoryAxis(
           isVisible: false,
           majorGridLines: MajorGridLines(width: 0),
@@ -78,6 +85,9 @@ class WaterConsumptionColumnChart extends StatelessWidget {
         ),
         series: <ColumnSeries<ChartData, String>>[
           ColumnSeries<ChartData, String>(
+            dataSource: chartData,
+            xValueMapper: (ChartData data, _) => data.country,
+            yValueMapper: (ChartData data, _) => data.waterUsage,
             gradient: LinearGradient(
               colors: [Colors.blue.shade400, Colors.blue.shade900],
               stops: const [0.0, 1.0],
@@ -99,9 +109,6 @@ class WaterConsumptionColumnChart extends StatelessWidget {
                 );
               },
             ),
-            dataSource: chartData,
-            xValueMapper: (ChartData data, _) => data.country,
-            yValueMapper: (ChartData data, _) => data.waterUsage,
           ),
         ],
       ),
