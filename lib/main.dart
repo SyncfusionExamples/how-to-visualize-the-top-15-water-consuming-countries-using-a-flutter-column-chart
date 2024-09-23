@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const WaterConsumptionAnalyzeChart());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class WaterConsumptionAnalyzeChart extends StatelessWidget {
+  const WaterConsumptionAnalyzeChart({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,22 +24,22 @@ class WaterConsumptionColumnChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<ChartData> chartData = [
-      ChartData('Turkmenistan', 15445),
-      ChartData('Chile', 5880),
-      ChartData('Guyana', 5284),
-      ChartData('Uzbekistan', 4778),
-      ChartData('Tajikistan', 4460),
-      ChartData('Kyrgyzstan', 4153),
-      ChartData('United-States', 3732),
-      ChartData('Iran', 3638),
-      ChartData('Estonia', 3585),
-      ChartData('Azerbaijan', 3512),
-      ChartData('Timor', 3456),
-      ChartData('Finland', 3414),
-      ChartData('Kazakhstan', 3397),
-      ChartData('New-Zealand', 3277),
-      ChartData('Suriname', 3214),
+    final List<WaterConsumptionData> waterUsageData = [
+      WaterConsumptionData('Turkmenistan', 15445),
+      WaterConsumptionData('Chile', 5880),
+      WaterConsumptionData('Guyana', 5284),
+      WaterConsumptionData('Uzbekistan', 4778),
+      WaterConsumptionData('Tajikistan', 4460),
+      WaterConsumptionData('Kyrgyzstan', 4153),
+      WaterConsumptionData('United-States', 3732),
+      WaterConsumptionData('Iran', 3638),
+      WaterConsumptionData('Estonia', 3585),
+      WaterConsumptionData('Azerbaijan', 3512),
+      WaterConsumptionData('Timor', 3456),
+      WaterConsumptionData('Finland', 3414),
+      WaterConsumptionData('Kazakhstan', 3397),
+      WaterConsumptionData('New-Zealand', 3277),
+      WaterConsumptionData('Suriname', 3214),
     ];
 
     return Container(
@@ -79,15 +79,16 @@ class WaterConsumptionColumnChart extends StatelessWidget {
           canShowMarker: false,
           color: Colors.blue,
           textStyle: const TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
-        series: <ColumnSeries<ChartData, String>>[
-          ColumnSeries<ChartData, String>(
-            dataSource: chartData,
-            xValueMapper: (ChartData data, _) => data.country,
-            yValueMapper: (ChartData data, _) => data.waterUsage,
+        series: <ColumnSeries<WaterConsumptionData, String>>[
+          ColumnSeries<WaterConsumptionData, String>(
+            dataSource: waterUsageData,
+            xValueMapper: (WaterConsumptionData data, dynamic) => data.country,
+            yValueMapper: (WaterConsumptionData data, dynamic) =>
+                data.waterUsage,
             gradient: LinearGradient(
               colors: [Colors.blue.shade400, Colors.blue.shade900],
               stops: const [0.0, 1.0],
@@ -96,7 +97,11 @@ class WaterConsumptionColumnChart extends StatelessWidget {
             ),
             dataLabelSettings: DataLabelSettings(
               isVisible: true,
-              builder: (data, point, series, pointIndex, seriesIndex) {
+              builder: (dynamic data,
+                  ChartPoint<dynamic> point,
+                  ChartSeries<dynamic, dynamic> series,
+                  int pointIndex,
+                  int seriesIndex) {
                 return Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -116,8 +121,8 @@ class WaterConsumptionColumnChart extends StatelessWidget {
   }
 }
 
-class ChartData {
-  ChartData(this.country, this.waterUsage);
+class WaterConsumptionData {
+  WaterConsumptionData(this.country, this.waterUsage);
   final String country;
   final double waterUsage;
 }
