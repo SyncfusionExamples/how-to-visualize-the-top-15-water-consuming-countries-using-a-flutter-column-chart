@@ -92,9 +92,9 @@ class WaterConsumptionColumnChart extends StatelessWidget {
           series: <ColumnSeries<WaterConsumptionData, String>>[
             ColumnSeries<WaterConsumptionData, String>(
               dataSource: waterUsageData,
-              xValueMapper: (WaterConsumptionData data, dynamic) =>
+              xValueMapper: (WaterConsumptionData data, int index) =>
                   data.country,
-              yValueMapper: (WaterConsumptionData data, dynamic) =>
+              yValueMapper: (WaterConsumptionData data, int index) =>
                   data.waterUsage,
               gradient: LinearGradient(
                 colors: [Colors.blue.shade400, Colors.blue.shade900],
