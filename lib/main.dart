@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:syncfusion_flutter_core/theme.dart';
 
 void main() => runApp(const WaterConsumptionAnalyzeChart());
 
@@ -54,68 +55,75 @@ class WaterConsumptionColumnChart extends StatelessWidget {
           end: Alignment.bottomCenter,
         ),
       ),
-      child: SfCartesianChart(
-        title: const ChartTitle(
-          text: 'Top 15 Water-Consuming Countries by Daily Usage (Liters)',
-          textStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
-        ),
-        primaryXAxis: const CategoryAxis(
-          isVisible: false,
-          majorGridLines: MajorGridLines(width: 0),
-          majorTickLines: MajorTickLines(width: 0),
-        ),
-        primaryYAxis: const NumericAxis(
-          title: AxisTitle(text: 'Liters per Capita'),
-          minimum: 2000,
-          maximum: 17000,
-          majorGridLines: MajorGridLines(width: 0),
-        ),
-        tooltipBehavior: TooltipBehavior(
-          enable: true,
-          header: '',
-          canShowMarker: false,
-          color: Colors.blue,
-          textStyle: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        series: <ColumnSeries<WaterConsumptionData, String>>[
-          ColumnSeries<WaterConsumptionData, String>(
-            dataSource: waterUsageData,
-            xValueMapper: (WaterConsumptionData data, dynamic) => data.country,
-            yValueMapper: (WaterConsumptionData data, dynamic) =>
-                data.waterUsage,
-            gradient: LinearGradient(
-              colors: [Colors.blue.shade400, Colors.blue.shade900],
-              stops: const [0.0, 1.0],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-            dataLabelSettings: DataLabelSettings(
-              isVisible: true,
-              builder: (dynamic data,
-                  ChartPoint<dynamic> point,
-                  ChartSeries<dynamic, dynamic> series,
-                  int pointIndex,
-                  int seriesIndex) {
-                return Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Image(
-                      image: AssetImage('assets/images/${data.country}.png'),
-                      width: 30,
-                      height: 30,
-                    ),
-                  ],
-                );
-              },
+      child: SfTheme(
+        data: SfThemeData(
+          chartThemeData: const SfChartThemeData(
+            titleTextStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
             ),
           ),
-        ],
+        ),
+        child: SfCartesianChart(
+          title: const ChartTitle(
+            text: 'Top 15 Water-Consuming Countries by Daily Usage (Liters)',
+          ),
+          primaryXAxis: const CategoryAxis(
+            isVisible: false,
+            majorGridLines: MajorGridLines(width: 0),
+            majorTickLines: MajorTickLines(width: 0),
+          ),
+          primaryYAxis: const NumericAxis(
+            title: AxisTitle(text: 'Liters per Capita'),
+            minimum: 2000,
+            maximum: 17000,
+            majorGridLines: MajorGridLines(width: 0),
+          ),
+          tooltipBehavior: TooltipBehavior(
+            enable: true,
+            header: '',
+            canShowMarker: false,
+            color: Colors.blue,
+            textStyle: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          series: <ColumnSeries<WaterConsumptionData, String>>[
+            ColumnSeries<WaterConsumptionData, String>(
+              dataSource: waterUsageData,
+              xValueMapper: (WaterConsumptionData data, dynamic) =>
+                  data.country,
+              yValueMapper: (WaterConsumptionData data, dynamic) =>
+                  data.waterUsage,
+              gradient: LinearGradient(
+                colors: [Colors.blue.shade400, Colors.blue.shade900],
+                stops: const [0.0, 1.0],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              dataLabelSettings: DataLabelSettings(
+                isVisible: true,
+                builder: (dynamic data,
+                    ChartPoint<dynamic> point,
+                    ChartSeries<dynamic, dynamic> series,
+                    int pointIndex,
+                    int seriesIndex) {
+                  return Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image(
+                        image: AssetImage('assets/images/${data.country}.png'),
+                        width: 30,
+                        height: 30,
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
