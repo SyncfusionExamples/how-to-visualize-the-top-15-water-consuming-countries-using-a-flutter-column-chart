@@ -70,7 +70,6 @@ flutter:
     - assets/images/Turkmenistan.png
     - assets/images/United-States.png
     - assets/images/Uzbekistan.png
-    - assets/images/backgroundImage.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

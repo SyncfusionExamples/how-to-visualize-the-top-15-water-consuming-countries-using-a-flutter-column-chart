@@ -43,87 +43,74 @@ class WaterConsumptionColumnChart extends StatelessWidget {
       WaterConsumptionData('Suriname', 3214),
     ];
 
-    return Container(
-      decoration: BoxDecoration(
-        image: const DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage('assets/images/backgroundImage.png'),
-        ),
-        gradient: LinearGradient(
-          colors: [Colors.blue.shade100, Colors.white],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+    return SfTheme(
+      data: SfThemeData(
+        chartThemeData: const SfChartThemeData(
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
       ),
-      child: SfTheme(
-        data: SfThemeData(
-          chartThemeData: const SfChartThemeData(
-            titleTextStyle: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-            ),
+      child: SfCartesianChart(
+        backgroundColor: Colors.blue.shade100,
+        title: const ChartTitle(
+          text: 'Top 15 Water-Consuming Countries by Daily Usage (Liters)',
+        ),
+        primaryXAxis: const CategoryAxis(
+          majorGridLines: MajorGridLines(width: 0),
+          majorTickLines: MajorTickLines(width: 0),
+        ),
+        primaryYAxis: const NumericAxis(
+          title: AxisTitle(text: 'Liters per Capita'),
+          minimum: 2000,
+          maximum: 17000,
+          majorGridLines: MajorGridLines(width: 0),
+        ),
+        tooltipBehavior: TooltipBehavior(
+          enable: true,
+          header: '',
+          canShowMarker: false,
+          color: Colors.blue,
+          textStyle: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        child: SfCartesianChart(
-          title: const ChartTitle(
-            text: 'Top 15 Water-Consuming Countries by Daily Usage (Liters)',
-          ),
-          primaryXAxis: const CategoryAxis(
-            isVisible: false,
-            majorGridLines: MajorGridLines(width: 0),
-            majorTickLines: MajorTickLines(width: 0),
-          ),
-          primaryYAxis: const NumericAxis(
-            title: AxisTitle(text: 'Liters per Capita'),
-            minimum: 2000,
-            maximum: 17000,
-            majorGridLines: MajorGridLines(width: 0),
-          ),
-          tooltipBehavior: TooltipBehavior(
-            enable: true,
-            header: '',
-            canShowMarker: false,
-            color: Colors.blue,
-            textStyle: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+        series: <ColumnSeries<WaterConsumptionData, String>>[
+          ColumnSeries<WaterConsumptionData, String>(
+            dataSource: waterUsageData,
+            xValueMapper: (WaterConsumptionData data, int index) =>
+                data.country,
+            yValueMapper: (WaterConsumptionData data, int index) =>
+                data.waterUsage,
+            gradient: LinearGradient(
+              colors: [Colors.blue.shade400, Colors.blue.shade900],
+              stops: const [0.0, 1.0],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            dataLabelSettings: DataLabelSettings(
+              isVisible: true,
+              builder: (dynamic data,
+                  ChartPoint<dynamic> point,
+                  ChartSeries<dynamic, dynamic> series,
+                  int pointIndex,
+                  int seriesIndex) {
+                return Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image(
+                      image: AssetImage('assets/images/${data.country}.png'),
+                      width: 30,
+                      height: 30,
+                    ),
+                  ],
+                );
+              },
             ),
           ),
-          series: <ColumnSeries<WaterConsumptionData, String>>[
-            ColumnSeries<WaterConsumptionData, String>(
-              dataSource: waterUsageData,
-              xValueMapper: (WaterConsumptionData data, int index) =>
-                  data.country,
-              yValueMapper: (WaterConsumptionData data, int index) =>
-                  data.waterUsage,
-              gradient: LinearGradient(
-                colors: [Colors.blue.shade400, Colors.blue.shade900],
-                stops: const [0.0, 1.0],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-              dataLabelSettings: DataLabelSettings(
-                isVisible: true,
-                builder: (dynamic data,
-                    ChartPoint<dynamic> point,
-                    ChartSeries<dynamic, dynamic> series,
-                    int pointIndex,
-                    int seriesIndex) {
-                  return Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image(
-                        image: AssetImage('assets/images/${data.country}.png'),
-                        width: 30,
-                        height: 30,
-                      ),
-                    ],
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }
