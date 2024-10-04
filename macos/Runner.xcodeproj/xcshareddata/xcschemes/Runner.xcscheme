@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-               BuildableName = "column_chart_with_custom_data_label.app"
+               BuildableName = "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart.app"
                BlueprintName = "Runner"
                ReferencedContainer = "container:Runner.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-            BuildableName = "column_chart_with_custom_data_label.app"
+            BuildableName = "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart.app"
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-            BuildableName = "column_chart_with_custom_data_label.app"
+            BuildableName = "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart.app"
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33CC10EC2044A3C60003C045"
-            BuildableName = "column_chart_with_custom_data_label.app"
+            BuildableName = "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart.app"
             BlueprintName = "Runner"
             ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>

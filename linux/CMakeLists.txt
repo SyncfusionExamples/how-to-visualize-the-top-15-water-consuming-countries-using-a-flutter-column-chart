@@ -4,10 +4,10 @@ project(runner LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "column_chart_with_custom_data_label")
+set(BINARY_NAME "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart")
 # The unique GTK application identifier for this application. See:
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
-set(APPLICATION_ID "com.example.column_chart_with_custom_data_label")
+set(APPLICATION_ID "com.example.visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

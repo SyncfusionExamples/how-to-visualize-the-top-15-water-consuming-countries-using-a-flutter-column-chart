@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(column_chart_with_custom_data_label LANGUAGES CXX)
+project(visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "column_chart_with_custom_data_label")
+set(BINARY_NAME "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

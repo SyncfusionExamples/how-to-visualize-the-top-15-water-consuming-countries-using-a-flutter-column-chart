@@ -27,7 +27,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   FlutterWindow window(project);
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(1280, 720);
-  if (!window.Create(L"column_chart_with_custom_data_label", origin, size)) {
+  if (!window.Create(L"visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart", origin, size)) {
     return EXIT_FAILURE;
   }
   window.SetQuitOnClose(true);

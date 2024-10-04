@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "column_chart_with_custom_data_label" "\0"
+            VALUE "FileDescription", "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "column_chart_with_custom_data_label" "\0"
+            VALUE "InternalName", "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "column_chart_with_custom_data_label.exe" "\0"
-            VALUE "ProductName", "column_chart_with_custom_data_label" "\0"
+            VALUE "OriginalFilename", "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart.exe" "\0"
+            VALUE "ProductName", "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

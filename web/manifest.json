@@ -1,6 +1,6 @@
 {
-    "name": "column_chart_with_custom_data_label",
-    "short_name": "column_chart_with_custom_data_label",
+    "name": "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart",
+    "short_name": "visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

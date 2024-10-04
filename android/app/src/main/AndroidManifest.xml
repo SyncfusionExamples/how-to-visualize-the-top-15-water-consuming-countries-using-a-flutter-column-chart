@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="column_chart_with_custom_data_label"
+        android:label="visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

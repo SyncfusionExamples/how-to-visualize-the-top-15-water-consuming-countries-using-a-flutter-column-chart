@@ -24,7 +24,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace = "com.example.column_chart_with_custom_data_label"
+    namespace = "com.example.visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -35,7 +35,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.column_chart_with_custom_data_label"
+        applicationId = "com.example.visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdk = flutter.minSdkVersion
