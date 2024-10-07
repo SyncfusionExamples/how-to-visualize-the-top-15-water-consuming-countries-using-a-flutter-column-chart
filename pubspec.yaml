@@ -23,20 +23,15 @@ dev_dependencies:
 
 flutter:
   assets:
-    - assets/images/Azerbaijan.png
-    - assets/images/Chile.png
-    - assets/images/Estonia.png
-    - assets/images/Finland.png
-    - assets/images/Guyana.png
-    - assets/images/Iran.png
-    - assets/images/Kazakhstan.png
-    - assets/images/Kyrgyzstan.png
-    - assets/images/New-Zealand.png
-    - assets/images/Suriname.png
-    - assets/images/Tajikistan.png
-    - assets/images/Timor.png
-    - assets/images/Turkmenistan.png
+    - assets/images/India.png
+    - assets/images/China.png
     - assets/images/United-States.png
-    - assets/images/Uzbekistan.png
+    - assets/images/Indonesia.png
+    - assets/images/Pakistan.png
+    - assets/images/Iran.png
+    - assets/images/Mexico.png
+    - assets/images/Philippines.png
+    - assets/images/Vietnam.png
+    - assets/images/Japan.png
 
   uses-material-design: true

@@ -32,26 +32,22 @@ class WaterConsumptionColumnChartState
   late List<WaterConsumptionData> _waterUsageData;
   late DataLabelSettings _dataLabelSettings;
   late LinearGradient _gradient;
+  late TooltipBehavior _tooltipBehavior;
 
   @override
   void initState() {
     super.initState();
     _waterUsageData = [
-      WaterConsumptionData('Turkmenistan', 15445),
-      WaterConsumptionData('Chile', 5880),
-      WaterConsumptionData('Guyana', 5284),
-      WaterConsumptionData('Uzbekistan', 4778),
-      WaterConsumptionData('Tajikistan', 4460),
-      WaterConsumptionData('Kyrgyzstan', 4153),
-      WaterConsumptionData('United-States', 3732),
-      WaterConsumptionData('Iran', 3638),
-      WaterConsumptionData('Estonia', 3585),
-      WaterConsumptionData('Azerbaijan', 3512),
-      WaterConsumptionData('Timor', 3456),
-      WaterConsumptionData('Finland', 3414),
-      WaterConsumptionData('Kazakhstan', 3397),
-      WaterConsumptionData('New-Zealand', 3277),
-      WaterConsumptionData('Suriname', 3214),
+      WaterConsumptionData('India', 761000000000, 2010),
+      WaterConsumptionData('China', 598100000000, 2015),
+      WaterConsumptionData('United-States', 444300000000, 2015),
+      WaterConsumptionData('Indonesia', 222600000000, 2016),
+      WaterConsumptionData('Pakistan', 183500000000, 2008),
+      WaterConsumptionData('Iran', 93300000000, 2004),
+      WaterConsumptionData('Mexico', 86580000000, 2016),
+      WaterConsumptionData('Philippines', 85140000000, 2016),
+      WaterConsumptionData('Vietnam', 82030000000, 2005),
+      WaterConsumptionData('Japan', 81450000000, 2009),
     ];
 
     _dataLabelSettings = DataLabelSettings(
@@ -78,6 +74,21 @@ class WaterConsumptionColumnChartState
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
     );
+
+    _tooltipBehavior = TooltipBehavior(
+      enable: true,
+      builder: (dynamic data, dynamic point, dynamic series, int pointIndex,
+          int seriesIndex) {
+        return Container(
+          padding: const EdgeInsets.all(5),
+          color: Colors.blue,
+          child: Text(
+            'Year: ${data.year.toInt()}',
+            style: const TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -85,7 +96,8 @@ class WaterConsumptionColumnChartState
     return SfCartesianChart(
       backgroundColor: Colors.lightBlue.withOpacity(0.3),
       title: const ChartTitle(
-        text: 'Top 15 Water-Consuming Countries by Daily Usage (Gallons)',
+        text:
+            'Top 10 Yearly Water Used Countries in cubic meters thousand of liters',
         textStyle: TextStyle(
           fontWeight: FontWeight.bold,
         ),
@@ -102,19 +114,20 @@ class WaterConsumptionColumnChartState
       ),
       primaryYAxis: const NumericAxis(
         title: AxisTitle(
-          text: 'Gallons per Capita',
+          text: 'cubic meters thousand of liters',
           textStyle: TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),
         majorGridLines: MajorGridLines(width: 0),
       ),
+      tooltipBehavior: _tooltipBehavior,
       series: <ColumnSeries<WaterConsumptionData, String>>[
         ColumnSeries<WaterConsumptionData, String>(
           dataSource: _waterUsageData,
           xValueMapper: (WaterConsumptionData data, int index) => data.country,
           yValueMapper: (WaterConsumptionData data, int index) =>
-              data.waterUsageInGallon,
+              data.waterUsage,
           gradient: _gradient,
           dataLabelSettings: _dataLabelSettings,
         ),
@@ -124,7 +137,8 @@ class WaterConsumptionColumnChartState
 }
 
 class WaterConsumptionData {
-  WaterConsumptionData(this.country, this.waterUsageInGallon);
+  WaterConsumptionData(this.country, this.waterUsage, this.year);
   final String country;
-  final double waterUsageInGallon;
+  final double waterUsage;
+  final double year;
 }
