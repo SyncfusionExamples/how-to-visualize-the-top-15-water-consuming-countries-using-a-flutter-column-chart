@@ -84,14 +84,11 @@ class WaterConsumptionColumnChartState
   Widget build(BuildContext context) {
     return SfCartesianChart(
       backgroundColor: Colors.lightBlue.withOpacity(0.3),
-      title: ChartTitle(
+      title: const ChartTitle(
         text: 'Top 15 Water-Consuming Countries by Daily Usage (Gallons)',
-        textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize:
-                  (Theme.of(context).textTheme.bodyMedium?.fontSize ?? 14) *
-                      1.8,
-              fontWeight: FontWeight.bold,
-            ),
+        textStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
       ),
       primaryXAxis: const CategoryAxis(
         title: AxisTitle(
@@ -117,7 +114,7 @@ class WaterConsumptionColumnChartState
           dataSource: _waterUsageData,
           xValueMapper: (WaterConsumptionData data, int index) => data.country,
           yValueMapper: (WaterConsumptionData data, int index) =>
-              data.waterUsage,
+              data.waterUsageInGallon,
           gradient: _gradient,
           dataLabelSettings: _dataLabelSettings,
         ),
@@ -127,7 +124,7 @@ class WaterConsumptionColumnChartState
 }
 
 class WaterConsumptionData {
-  WaterConsumptionData(this.country, this.waterUsage);
+  WaterConsumptionData(this.country, this.waterUsageInGallon);
   final String country;
-  final double waterUsage;
+  final double waterUsageInGallon;
 }
