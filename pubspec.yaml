@@ -1,0 +1,42 @@
+name: visualizing_the_top_15_yearly_water_consuming_countries_in_cubic_meters_thousands_of_liters
+description: "Syncfusion Flutter Column Chart data label customization."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  syncfusion_flutter_charts: ^27.1.50
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  assets:
+    - assets/images/India.png
+    - assets/images/China.png
+    - assets/images/United-States.png
+    - assets/images/Indonesia.png
+    - assets/images/Pakistan.png
+    - assets/images/Iran.png
+    - assets/images/Mexico.png
+    - assets/images/Philippines.png
+    - assets/images/Vietnam.png
+    - assets/images/Japan.png
+    - assets/images/Egypt.png
+    - assets/images/Russia.png
+    - assets/images/Brazil.png
+    - assets/images/Turkey.png
+    - assets/images/Thailand.png
+
+  uses-material-design: true

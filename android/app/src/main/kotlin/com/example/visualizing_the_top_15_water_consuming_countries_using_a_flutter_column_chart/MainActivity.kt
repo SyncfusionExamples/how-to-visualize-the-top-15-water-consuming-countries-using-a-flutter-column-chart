@@ -1,0 +1,5 @@
+package com.example.visualizing_the_top_15_water_consuming_countries_using_a_flutter_column_chart
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
