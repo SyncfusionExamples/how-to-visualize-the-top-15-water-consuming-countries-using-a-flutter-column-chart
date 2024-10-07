@@ -29,7 +29,7 @@ class WaterConsumptionColumnChart extends StatefulWidget {
 
 class WaterConsumptionColumnChartState
     extends State<WaterConsumptionColumnChart> {
-  late List<WaterConsumptionData> _waterUsageData;
+  late List<WaterConsumptionData> _yearlyWaterUsageData;
   late DataLabelSettings _dataLabelSettings;
   late LinearGradient _gradient;
   late TooltipBehavior _tooltipBehavior;
@@ -37,7 +37,7 @@ class WaterConsumptionColumnChartState
   @override
   void initState() {
     super.initState();
-    _waterUsageData = [
+    _yearlyWaterUsageData = [
       WaterConsumptionData('India', 761000000000, 2010),
       WaterConsumptionData('China', 598100000000, 2015),
       WaterConsumptionData('United-States', 444300000000, 2015),
@@ -48,6 +48,11 @@ class WaterConsumptionColumnChartState
       WaterConsumptionData('Philippines', 85140000000, 2016),
       WaterConsumptionData('Vietnam', 82030000000, 2005),
       WaterConsumptionData('Japan', 81450000000, 2009),
+      WaterConsumptionData('Egypt', 77500000000, 2017),
+      WaterConsumptionData('Russia', 69500000000, 2016),
+      WaterConsumptionData('Brazil', 63500000000, 2016),
+      WaterConsumptionData('Turkey', 58950000000, 2016),
+      WaterConsumptionData('Thailand', 57310000000, 2007),
     ];
 
     _dataLabelSettings = DataLabelSettings(
@@ -97,7 +102,7 @@ class WaterConsumptionColumnChartState
       backgroundColor: Colors.lightBlue.withOpacity(0.3),
       title: const ChartTitle(
         text:
-            'Top 10 Yearly Water Used Countries in cubic meters thousand of liters',
+            'Top 15 Yearly Water-Consuming Countries In Cubic Meters Thousands Of Liters',
         textStyle: TextStyle(
           fontWeight: FontWeight.bold,
         ),
@@ -114,7 +119,7 @@ class WaterConsumptionColumnChartState
       ),
       primaryYAxis: const NumericAxis(
         title: AxisTitle(
-          text: 'cubic meters thousand of liters',
+          text: 'Cubic Meters Thousands Of Liters',
           textStyle: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -124,10 +129,10 @@ class WaterConsumptionColumnChartState
       tooltipBehavior: _tooltipBehavior,
       series: <ColumnSeries<WaterConsumptionData, String>>[
         ColumnSeries<WaterConsumptionData, String>(
-          dataSource: _waterUsageData,
+          dataSource: _yearlyWaterUsageData,
           xValueMapper: (WaterConsumptionData data, int index) => data.country,
           yValueMapper: (WaterConsumptionData data, int index) =>
-              data.waterUsage,
+              data.yearlyWaterUsage,
           gradient: _gradient,
           dataLabelSettings: _dataLabelSettings,
         ),
@@ -137,8 +142,8 @@ class WaterConsumptionColumnChartState
 }
 
 class WaterConsumptionData {
-  WaterConsumptionData(this.country, this.waterUsage, this.year);
+  WaterConsumptionData(this.country, this.yearlyWaterUsage, this.year);
   final String country;
-  final double waterUsage;
+  final double yearlyWaterUsage;
   final double year;
 }
