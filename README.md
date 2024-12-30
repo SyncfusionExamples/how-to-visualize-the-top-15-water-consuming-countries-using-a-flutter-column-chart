@@ -2,9 +2,9 @@
 
 This repository contains a sample to visualizing the top 15 yearly water consuming countries with custom data labels using [Syncfusion Flutter Chart](https://help.syncfusion.com/flutter/cartesian-charts/getting-started) widget.
 
-Please refer the Blog through this [link](https://github.com/SyncfusionExamples/how-to-visualize-the-top-15-water-consuming-countries-using-a-flutter-column-chart).
+Please refer the Blog through this [link](https://www.syncfusion.com/blogs/post/flutter-column-chart-for-water-consumption).
 
-## Syncfusion widgets:
+## Syncfusion controls:
 
 This project used the following Syncfusion widget(s):
 * [SfCartesianChart](https://www.syncfusion.com/flutter-widgets/flutter-charts)
